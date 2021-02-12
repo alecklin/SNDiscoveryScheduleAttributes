@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="50237cb6dbcae0508c256b1813961954" sys_domain="global" table="discovery_range_item" version="3" view="ci_attributes">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>0</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:13:01</sys_created_on>
+            <sys_id>54237cb6dbcae0508c256b1813961955</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="discovery_range_item" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">50237cb6dbcae0508c256b1813961954</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:13:01</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>name</element>
+            <position>1</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:13:01</sys_created_on>
+            <sys_id>d8237cb6dbcae0508c256b1813961955</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="discovery_range_item" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">50237cb6dbcae0508c256b1813961954</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:13:01</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>2</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:13:01</sys_created_on>
+            <sys_id>5c237cb6dbcae0508c256b1813961955</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="discovery_range_item" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">50237cb6dbcae0508c256b1813961954</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:13:01</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sys_scope</element>
+            <position>3</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:13:01</sys_created_on>
+            <sys_id>dc237cb6dbcae0508c256b1813961955</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="discovery_range_item" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">50237cb6dbcae0508c256b1813961954</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:13:01</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>active</element>
+            <position>4</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:13:01</sys_created_on>
+            <sys_id>50237cb6dbcae0508c256b1813961956</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="discovery_range_item" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">50237cb6dbcae0508c256b1813961954</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:13:01</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>5</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:13:01</sys_created_on>
+            <sys_id>d0237cb6dbcae0508c256b1813961956</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="discovery_range_item" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">50237cb6dbcae0508c256b1813961954</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:13:01</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>attributes</element>
+            <position>6</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:13:01</sys_created_on>
+            <sys_id>54237cb6dbcae0508c256b1813961956</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="discovery_range_item" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">50237cb6dbcae0508c256b1813961954</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:13:01</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>7</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:13:01</sys_created_on>
+            <sys_id>d4237cb6dbcae0508c256b1813961956</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="discovery_range_item" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">50237cb6dbcae0508c256b1813961954</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:13:01</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>end_ip_address</element>
+            <position>8</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:13:01</sys_created_on>
+            <sys_id>58237cb6dbcae0508c256b1813961956</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="discovery_range_item" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">50237cb6dbcae0508c256b1813961954</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:13:01</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>netmask</element>
+            <position>9</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:13:01</sys_created_on>
+            <sys_id>d8237cb6dbcae0508c256b1813961956</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="discovery_range_item" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">50237cb6dbcae0508c256b1813961954</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:13:01</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>network_ip</element>
+            <position>10</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:13:01</sys_created_on>
+            <sys_id>5c237cb6dbcae0508c256b1813961956</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="discovery_range_item" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">50237cb6dbcae0508c256b1813961954</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:13:01</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>parent</element>
+            <position>11</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:13:01</sys_created_on>
+            <sys_id>dc237cb6dbcae0508c256b1813961956</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="discovery_range_item" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">50237cb6dbcae0508c256b1813961954</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:13:01</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>start_ip_address</element>
+            <position>12</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:13:01</sys_created_on>
+            <sys_id>50237cb6dbcae0508c256b1813961957</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="discovery_range_item" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">50237cb6dbcae0508c256b1813961954</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:13:01</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>13</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:13:01</sys_created_on>
+            <sys_id>d0237cb6dbcae0508c256b1813961957</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="discovery_range_item" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">50237cb6dbcae0508c256b1813961954</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:13:01</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>summary</element>
+            <position>14</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:13:01</sys_created_on>
+            <sys_id>54237cb6dbcae0508c256b1813961957</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="discovery_range_item" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">50237cb6dbcae0508c256b1813961954</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:13:01</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sys_domain</element>
+            <position>15</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:13:01</sys_created_on>
+            <sys_id>d4237cb6dbcae0508c256b1813961957</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="discovery_range_item" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">50237cb6dbcae0508c256b1813961954</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:13:01</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>type</element>
+            <position>16</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:13:01</sys_created_on>
+            <sys_id>58237cb6dbcae0508c256b1813961957</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="discovery_range_item" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">50237cb6dbcae0508c256b1813961954</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:13:01</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>schedule</element>
+            <position>17</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:13:01</sys_created_on>
+            <sys_id>d8237cb6dbcae0508c256b1813961957</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="discovery_range_item" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">50237cb6dbcae0508c256b1813961954</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:13:01</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>18</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:13:01</sys_created_on>
+            <sys_id>5c237cb6dbcae0508c256b1813961957</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="discovery_range_item" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">50237cb6dbcae0508c256b1813961954</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:13:01</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>discovery_range_item</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:13:01</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>50237cb6dbcae0508c256b1813961954</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>discovery_range_item</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="SN Discovery Schedule Attributes" source="x_snc_sn_discovery">5e50158adb02ec108c256b1813961918</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</sys_scope>
+            <sys_update_name>sys_ui_section_50237cb6dbcae0508c256b1813961954</sys_update_name>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:13:01</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="CI Attributes" name="ci_attributes">eab27c76dbcae0508c256b1813961969</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

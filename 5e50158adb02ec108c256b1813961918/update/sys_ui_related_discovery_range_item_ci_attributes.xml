@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_related sys_domain="global" table="discovery_range_item" version="2" view="ci_attributes">
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Discovery IP Range - CI Attributes" name="discovery_range_item" related_list="NULL" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">f273b4f6dbcae0508c256b18139619d0</list_id>
+            <order_by/>
+            <position>0</position>
+            <related_list>discovery_range_item_ip.item_parent</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:14:33</sys_created_on>
+            <sys_id>3273b4f6dbcae0508c256b18139619d1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:14:33</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Discovery IP Range - CI Attributes" name="discovery_range_item" related_list="NULL" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">f273b4f6dbcae0508c256b18139619d0</list_id>
+            <order_by/>
+            <position>1</position>
+            <related_list>discovery_range_item_zone.item_parent</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:14:33</sys_created_on>
+            <sys_id>3673b4f6dbcae0508c256b18139619d1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:14:33</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Discovery IP Range - CI Attributes" name="discovery_range_item" related_list="NULL" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">f273b4f6dbcae0508c256b18139619d0</list_id>
+            <order_by/>
+            <position>2</position>
+            <related_list>discovery_range_item_exclude.parent</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:14:33</sys_created_on>
+            <sys_id>3a73b4f6dbcae0508c256b18139619d1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:14:33</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Discovery IP Range - CI Attributes" name="discovery_range_item" related_list="NULL" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">f273b4f6dbcae0508c256b18139619d0</list_id>
+            <order_by/>
+            <position>3</position>
+            <related_list>x_snc_sn_discovery_discovery_schedule_ci_attributes.discovery_ip_range</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:14:33</sys_created_on>
+            <sys_id>3e73b4f6dbcae0508c256b18139619d1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:14:33</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list action="INSERT_OR_UPDATE">
+            <calculated_name>Discovery IP Range - CI Attributes</calculated_name>
+            <filter/>
+            <name>discovery_range_item</name>
+            <order_by/>
+            <position/>
+            <related_list/>
+            <sys_class_name>sys_ui_related_list</sys_class_name>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-02-04 06:14:33</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f273b4f6dbcae0508c256b18139619d0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Discovery IP Range - CI Attributes</sys_name>
+            <sys_package display_value="SN Discovery Schedule Attributes" source="x_snc_sn_discovery">5e50158adb02ec108c256b1813961918</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</sys_scope>
+            <sys_update_name>sys_ui_related_discovery_range_item_ci_attributes</sys_update_name>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-02-04 06:14:33</sys_updated_on>
+            <sys_user/>
+            <view display_value="CI Attributes" name="ci_attributes">eab27c76dbcae0508c256b1813961969</view>
+            <view_name/>
+        </sys_ui_related_list>
+    </sys_ui_related>
+</record_update>

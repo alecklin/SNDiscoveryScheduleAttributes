@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="discovery_schedule_range">
+    <discovery_schedule_range action="INSERT_OR_UPDATE">
+        <dscheduler display_value="Test schedule for stuff">47d463aadbc2e0508c256b18139619d7</dscheduler>
+        <range display_value="Test Range set">c6b468bedb4ae0508c256b1813961932</range>
+        <sys_class_name>discovery_schedule_range</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2021-02-04 05:10:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>dcc42cbedb4ae0508c256b1813961958</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Test Range set.Test schedule for stuff</sys_name>
+        <sys_package display_value="SN Discovery Schedule Attributes" source="x_snc_sn_discovery">5e50158adb02ec108c256b1813961918</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</sys_scope>
+        <sys_update_name>discovery_schedule_range_dcc42cbedb4ae0508c256b1813961958</sys_update_name>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2021-02-04 05:10:12</sys_updated_on>
+    </discovery_schedule_range>
+</record_update>

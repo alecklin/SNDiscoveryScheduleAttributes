@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="DELETE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description/>
+        <elevated_privilege>false</elevated_privilege>
+        <encryption_context/>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_snc_sn_discovery.discovery_schedule_ci_attributes_user</name>
+        <requires_subscription>-1</requires_subscription>
+        <scoped_admin>false</scoped_admin>
+        <suffix>discovery_schedule_ci_attributes_user</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2021-02-04 05:54:46</sys_created_on>
+        <sys_id>70fe20fedb8ae0508c256b1813961956</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_sn_discovery.discovery_schedule_ci_attributes_user</sys_name>
+        <sys_package display_value="SN Discovery Schedule Attributes" source="x_snc_sn_discovery">5e50158adb02ec108c256b1813961918</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</sys_scope>
+        <sys_update_name>sys_user_role_70fe20fedb8ae0508c256b1813961956</sys_update_name>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2021-02-04 05:54:46</sys_updated_on>
+    </sys_user_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</application>
+        <file_path/>
+        <instance_id>e84283ad4f6ac24028b999701310c7d0</instance_id>
+        <instance_name>calin5</instance_name>
+        <name>sys_user_role_70fe20fedb8ae0508c256b1813961956</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role"><sys_user_role action="INSERT_OR_UPDATE"><assignable_by/><can_delegate>true</can_delegate><description/><elevated_privilege>false</elevated_privilege><encryption_context/><grantable>true</grantable><includes_roles/><name>x_snc_sn_discovery.discovery_schedule_ci_attributes_user</name><requires_subscription>-1</requires_subscription><scoped_admin>false</scoped_admin><suffix>discovery_schedule_ci_attributes_user</suffix><sys_class_name>sys_user_role</sys_class_name><sys_created_by>aleck.lin</sys_created_by><sys_created_on>2021-02-04 05:54:46</sys_created_on><sys_id>70fe20fedb8ae0508c256b1813961956</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_snc_sn_discovery.discovery_schedule_ci_attributes_user</sys_name><sys_package display_value="SN Discovery Schedule Attributes" source="x_snc_sn_discovery">5e50158adb02ec108c256b1813961918</sys_package><sys_policy/><sys_scope display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</sys_scope><sys_update_name>sys_user_role_70fe20fedb8ae0508c256b1813961956</sys_update_name><sys_updated_by>aleck.lin</sys_updated_by><sys_updated_on>2021-02-04 05:54:46</sys_updated_on></sys_user_role></record_update>]]></payload>
+        <payload_hash>470998253</payload_hash>
+        <record_name>x_snc_sn_discovery.discovery_schedule_ci_attributes_user</record_name>
+        <reverted_from/>
+        <source>918091cadb02ec108c256b181396191c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2021-02-04 05:54:46</sys_created_on>
+        <sys_id>41fee0fedb8ae0508c256b18139619d0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1776b9b767b0000001</sys_recorded_at>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2021-02-04 05:54:46</sys_updated_on>
+        <type>Role</type>
+        <update_guid>49fee0feb48ae050bd798a2c380adbcf</update_guid>
+        <update_guid_history>49fee0feb48ae050bd798a2c380adbcf:470998253</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Record deleted 2021-02-03 21:55:55">353facfedb8ae0508c256b1813961937</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2021-02-04 05:55:55</sys_created_on>
+        <sys_db_object display_value="" name="sys_user_role">sys_user_role</sys_db_object>
+        <sys_id>147470fd640b44d187c7efbc86b4bdd1</sys_id>
+        <sys_metadata>70fe20fedb8ae0508c256b1813961956</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_sn_discovery.discovery_schedule_ci_attributes_user</sys_name>
+        <sys_package display_value="SN Discovery Schedule Attributes" source="x_snc_sn_discovery">5e50158adb02ec108c256b1813961918</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</sys_scope>
+        <sys_scope_delete display_value="">222e5f30045b40808f430f493fe84000</sys_scope_delete>
+        <sys_update_name>sys_user_role_70fe20fedb8ae0508c256b1813961956</sys_update_name>
+        <sys_update_version display_value="sys_user_role_70fe20fedb8ae0508c256b1813961956">41fee0fedb8ae0508c256b18139619d0</sys_update_version>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2021-02-04 05:55:55</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

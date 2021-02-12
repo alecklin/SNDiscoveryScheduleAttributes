@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_sn_discovery.DiscoIPRangePopulation</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Aleck.lin@ServiceNow.com</description>
+        <name>DiscoIPRangePopulation</name>
+        <script><![CDATA[var DiscoIPRangePopulation = Class.create();
+DiscoIPRangePopulation.prototype = {
+    initialize: function() {
+		this.debugFlag = true;
+    },
+	
+	run: function(dir) {	
+		var discoIPRange = dir;
+		
+		var newRecord = false;
+		var gr = new GlideRecord("x_snc_sn_discovery_ip_range_calculation");
+		gr.addQuery('discovery_ip_range', discoIPRange.sys_id+'');
+		gr.query();
+		if (!gr.next()) {		
+			newRecord = true;
+			gr.initialize();
+		}
+		this.debug("Is the current IP Range caluclation record is a new one? " + newRecord);
+
+		this.populateIPAddressRange(gr, discoIPRange);				
+		
+		if (newRecord)
+			gr.insert();
+		else
+			gr.update();
+
+	},
+	
+	
+	populateIPAddressRange: function(gr, dir) {
+		var discoIPRange = dir;		
+		var ipRangeType = discoIPRange.type;
+		this.debug("The IP Range type is " + ipRangeType);		
+
+		gr.discovery_ip_range = discoIPRange.sys_id+'';
+		
+gs.info("did we get here???....");		
+		if (gs.nil(ipRangeType))
+			return;			
+		
+gs.info("starting to calculate addresses....");
+		if (ipRangeType == "IP Address Range") {
+gs.info("starting ip is " + discoIPRange.start_ip_address);
+gs.info("ending ip is " + discoIPRange.end_ip_address);			
+			
+			gr.starting_ip = discoIPRange.start_ip_address;
+			gr.ending_ip = discoIPRange.end_ip_address;
+gs.info("starting ip is " + gr.starting_ip + "; ending ip is " + gr.ending_ip);
+			this._clearOutIPAddressList(gr);
+		} else if (ipRangeType == "IP Network") {
+gs.info("running logic for IP Network");
+			this.caluclateStartingAndEndingIP(gr, discoIPRange.network_ip, discoIPRange.netmask);
+			this._clearOutIPAddressList(gr);
+		} else if (ipRangeType == "IP Address List") {
+gs.info("running logic for IP Address List");			
+			this.calculateListOfAddresses(gr, discoIPRange);
+			this._clearOutRange(gr);
+		} else {
+			this.debug("No match for the IP Range Type: " + ipRangeType);
+		}		
+	},
+	
+	
+	caluclateStartingAndEndingIP: function (gr, networkIP, netmask) {
+		this.debug("CIDR value is " + networkIP+"/"+netmask);
+		var obj = x_snc_sn_discovery.IPAddressHelper.CIDRToIPs(networkIP+"/"+netmask);
+		gr.starting_ip = obj[0];
+		gr.ending_ip = obj[1];
+	},
+	
+	calculateListOfAddresses: function(gr, discoIPRange) {
+		var ips = [];
+		
+		var gdr = new GlideRecord("discovery_range_item_ip");
+		gdr.addQuery("item_parent", discoIPRange.sys_id+'');
+		gdr.query();
+		while (gdr.next())
+			ips.push(gdr.ip_address);
+		
+		if (ips.length > 0) 
+			gr.list_of_ips = ips.join(',');
+	},
+	
+	_clearOutIPAddressList: function(gr) { 
+		gr.list_of_ips = '';
+	},
+	
+	_clearOutRange: function(gr) {
+		gr.starting_ip = '';
+		gr.ending_ip = '';
+		gr.starting_ip_decimal = '';
+		gr.ending_ip_decimal = '';
+	},
+	
+	debug: function(msg) {
+		if (this.debugFlag)
+			gs.info(msg);
+	},
+	
+
+    type: 'DiscoIPRangePopulation'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2021-02-04 06:49:38</sys_created_on>
+        <sys_id>b17b3436db0ee0508c256b1813961917</sys_id>
+        <sys_mod_count>39</sys_mod_count>
+        <sys_name>DiscoIPRangePopulation</sys_name>
+        <sys_package display_value="SN Discovery Schedule Attributes" source="x_snc_sn_discovery">5e50158adb02ec108c256b1813961918</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</sys_scope>
+        <sys_update_name>sys_script_include_b17b3436db0ee0508c256b1813961917</sys_update_name>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2021-02-11 08:58:17</sys_updated_on>
+    </sys_script_include>
+</record_update>

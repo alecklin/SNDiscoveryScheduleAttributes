@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="discovery_range_item_ip">
+    <discovery_range_item_ip action="INSERT_OR_UPDATE">
+        <exclude_parent/>
+        <ip_address>10.10.10.11</ip_address>
+        <item_parent display_value="10.10.10.10-10.10.10.11">dc696476db8ae0508c256b18139619c6</item_parent>
+        <name/>
+        <sys_class_name>discovery_range_item_ip</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2021-02-04 07:19:55</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>f9620932db4ee0508c256b18139619b2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="SN Discovery Schedule Attributes" source="x_snc_sn_discovery">5e50158adb02ec108c256b1813961918</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</sys_scope>
+        <sys_update_name>discovery_range_item_ip_f9620932db4ee0508c256b18139619b2</sys_update_name>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2021-02-04 07:19:55</sys_updated_on>
+    </discovery_range_item_ip>
+</record_update>

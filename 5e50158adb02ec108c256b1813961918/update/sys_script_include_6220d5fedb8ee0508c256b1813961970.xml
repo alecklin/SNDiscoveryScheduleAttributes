@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_sn_discovery.IPAddressHelper</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Aleck.Lin@ServiceNow.com&#13;
+A utility method for dealing with IP address </description>
+        <name>IPAddressHelper</name>
+        <script><![CDATA[var IPAddressHelper = Class.create();
+
+//Convert IP address to a decimal
+IPAddressHelper.toDecimal = function(ipAddr) {
+	var ipDec;
+	
+	if (!validateIP(ipAddr)) {
+		gs.info("Bad IP Address!");
+		return;
+	}
+	
+	var groups = ipAddr.split(".");
+	if (groups.length != "4")
+		return;
+	
+	ipDec = groups[0]*Math.pow(2,24) + groups[1]*Math.pow(2,16) + groups[2]*Math.pow(2,8) + parseInt(groups[3]);	
+	
+	return ipDec;
+	
+	function validateIP(ipAddr) {
+		// Got this from https://www.w3resource.com/javascript/form/ip-address-validation.php
+		if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(ipAddr)) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+},
+	
+	
+/* Convert CIDR network to starting and ending IP addresses */
+IPAddressHelper.CIDRToIPs = function(network, subnet) {
+	
+	/* 
+		returns an array of 2 elements, starting address and end address. For example, running this
+		
+			x_snc_sn_discovery.IPAddressHelper.CIDRToIPs('10.10.10.0/24')
+			
+		will return 
+			
+			["10.10.10.0", "10.10.10.255"]
+	*/
+	return getIpRangeFromAddressAndNetmask(network+"/"+subnet);
+	
+	/* https://stackoverflow.com/questions/32978982/calculate-ip-range-from-ip-string-equal-to-x-x-x-x-x */
+	function getIpRangeFromAddressAndNetmask(str) {
+	  var part = str.split("/"); // part[0] = base address, part[1] = netmask
+	  var ipaddress = part[0].split('.');
+	  var netmaskblocks = ["0","0","0","0"];
+	  if(!/\d+\.\d+\.\d+\.\d+/.test(part[1])) {
+		// part[1] has to be between 0 and 32
+		netmaskblocks = ("1".repeat(parseInt(part[1], 10)) + "0".repeat(32-parseInt(part[1], 10))).match(/.{1,8}/g);
+		netmaskblocks = netmaskblocks.map(function(el) { return parseInt(el, 2); });
+	  } else {
+		// xxx.xxx.xxx.xxx
+		netmaskblocks = part[1].split('.').map(function(el) { return parseInt(el, 10) });
+	  }
+	  // invert for creating broadcast address (highest address)
+	  var invertedNetmaskblocks = netmaskblocks.map(function(el) { return el ^ 255; });
+	  var baseAddress = ipaddress.map(function(block, idx) { return block & netmaskblocks[idx]; });
+	  var broadcastaddress = baseAddress.map(function(block, idx) { return block | invertedNetmaskblocks[idx]; });
+	  return [baseAddress.join('.'), broadcastaddress.join('.')];
+	}
+},
+
+IPAddressHelper.prototype = {
+
+    type: 'IPAddressHelper'
+};
+
+
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2021-02-04 08:22:12</sys_created_on>
+        <sys_id>6220d5fedb8ee0508c256b1813961970</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>IPAddressHelper</sys_name>
+        <sys_package display_value="SN Discovery Schedule Attributes" source="x_snc_sn_discovery">5e50158adb02ec108c256b1813961918</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</sys_scope>
+        <sys_update_name>sys_script_include_6220d5fedb8ee0508c256b1813961970</sys_update_name>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2021-02-11 08:50:05</sys_updated_on>
+    </sys_script_include>
+</record_update>

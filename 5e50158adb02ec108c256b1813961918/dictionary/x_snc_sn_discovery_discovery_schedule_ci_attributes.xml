@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Discovery Schedule CI Attributes" max_length="40" name="x_snc_sn_discovery_discovery_schedule_ci_attributes" sizeclass="2" type="collection">
+        <element label="CI Attribute" max_length="40" name="ci_attribute" type="string"/>
+        <element label="CI Attribute Value" max_length="40" name="ci_attribute_value" type="string"/>
+        <element label="Discovery IP Range" max_length="32" name="discovery_ip_range" reference="discovery_range_item" reference_cascade_rule="cascade" type="reference"/>
+        <element label="Discovery Schedule" max_length="32" name="discovery_schedule" reference="discovery_schedule" reference_cascade_rule="cascade" type="reference"/>
+        <index name="index">
+            <element name="discovery_ip_range"/>
+        </index>
+        <index name="index2">
+            <element name="discovery_schedule"/>
+        </index>
+    </element>
+</database>
