@@ -34,7 +34,7 @@
         <function_field>false</function_field>
         <internal_type display_value="String">string</internal_type>
         <mandatory>false</mandatory>
-        <max_length>40</max_length>
+        <max_length>256</max_length>
         <name>x_snc_sn_discovery_discovery_schedule_ci_attributes</name>
         <next_element/>
         <primary>false</primary>
@@ -54,14 +54,14 @@
         <sys_created_by>aleck.lin</sys_created_by>
         <sys_created_on>2021-02-04 05:54:46</sys_created_on>
         <sys_id>bfe8a876db8ae0508c256b18139619aa</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>CI Attribute Value</sys_name>
         <sys_package display_value="SN Discovery Schedule Attributes" source="x_snc_sn_discovery">5e50158adb02ec108c256b1813961918</sys_package>
         <sys_policy/>
         <sys_scope display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</sys_scope>
         <sys_update_name>sys_dictionary_x_snc_sn_discovery_discovery_schedule_ci_attributes_ci_attribute_value</sys_update_name>
         <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2021-02-04 05:54:46</sys_updated_on>
+        <sys_updated_on>2021-02-16 21:23:51</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
