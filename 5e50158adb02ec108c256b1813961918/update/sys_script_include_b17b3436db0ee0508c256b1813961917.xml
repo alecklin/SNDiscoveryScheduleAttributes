@@ -10,7 +10,7 @@
         <script><![CDATA[var DiscoIPRangePopulation = Class.create();
 DiscoIPRangePopulation.prototype = {
     initialize: function() {
-		this.debugFlag = true;
+		this.debugFlag = false;
     },
 	
 	run: function(dir) {	
@@ -43,25 +43,22 @@ DiscoIPRangePopulation.prototype = {
 
 		gr.discovery_ip_range = discoIPRange.sys_id+'';
 		
-gs.info("did we get here???....");		
 		if (gs.nil(ipRangeType))
 			return;			
 		
-gs.info("starting to calculate addresses....");
+
 		if (ipRangeType == "IP Address Range") {
-gs.info("starting ip is " + discoIPRange.start_ip_address);
-gs.info("ending ip is " + discoIPRange.end_ip_address);			
-			
 			gr.starting_ip = discoIPRange.start_ip_address;
 			gr.ending_ip = discoIPRange.end_ip_address;
-gs.info("starting ip is " + gr.starting_ip + "; ending ip is " + gr.ending_ip);
+			this.debug("starting ip is " + gr.starting_ip + "; ending ip is " + gr.ending_ip);
+			
 			this._clearOutIPAddressList(gr);
 		} else if (ipRangeType == "IP Network") {
-gs.info("running logic for IP Network");
+			this.debug("running logic for IP Network");
 			this.caluclateStartingAndEndingIP(gr, discoIPRange.network_ip, discoIPRange.netmask);
 			this._clearOutIPAddressList(gr);
 		} else if (ipRangeType == "IP Address List") {
-gs.info("running logic for IP Address List");			
+			this.debug("running logic for IP Address List");			
 			this.calculateListOfAddresses(gr, discoIPRange);
 			this._clearOutRange(gr);
 		} else {
@@ -113,13 +110,13 @@ gs.info("running logic for IP Address List");
         <sys_created_by>aleck.lin</sys_created_by>
         <sys_created_on>2021-02-04 06:49:38</sys_created_on>
         <sys_id>b17b3436db0ee0508c256b1813961917</sys_id>
-        <sys_mod_count>39</sys_mod_count>
+        <sys_mod_count>40</sys_mod_count>
         <sys_name>DiscoIPRangePopulation</sys_name>
         <sys_package display_value="SN Discovery Schedule Attributes" source="x_snc_sn_discovery">5e50158adb02ec108c256b1813961918</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</sys_scope>
         <sys_update_name>sys_script_include_b17b3436db0ee0508c256b1813961917</sys_update_name>
         <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2021-02-11 08:58:17</sys_updated_on>
+        <sys_updated_on>2021-02-16 21:13:32</sys_updated_on>
     </sys_script_include>
 </record_update>

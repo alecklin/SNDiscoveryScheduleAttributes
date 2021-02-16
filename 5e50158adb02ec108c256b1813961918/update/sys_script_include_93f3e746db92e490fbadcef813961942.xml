@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_sn_discovery.CIAttributePopulation</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CIAttributePopulation</name>
+        <script><![CDATA[var CIAttributePopulation = Class.create();
+CIAttributePopulation.prototype = {
+    initialize: function() {
+		this.debugFlag = false;
+    },
+
+	run: function(current) {
+		this.debug("1 Kicking off script action - Set CI Attr from Disco schedule"); 
+		
+		var cmdb_ci = current.cmdb_ci + '';
+		var ipAddress = current.source + '';
+		if (gs.nil(cmdb_ci) || gs.nil(ipAddress) ) {
+			this.debug("CI or IP address do not exist. CI: " + cmdb_ci + ". IP address: " + ipAddress);
+			return; //If cmdb_ci or ip_address doesn't exist... just GTFO
+		}
+
+		this.debug("2 getting status and schedule...");
+		
+		var discoStatus = current.status;
+		var discoSchedule = discoStatus.dscheduler;
+
+		if (gs.nil(discoSchedule))
+			return; //if we can't find no schedule... unlikely, but check anyway
+
+		var attributes = {};
+
+		// Update CI based on attributes defined on the schedule directly
+		this.getCIAttributesBasedOnSchedule(discoSchedule, attributes);
+		
+		this.debug("3 Attributes defined on the schedule level: " + (new global.JSON().encode(attributes)));
+
+		var ipRange = this.findRangeForIP(discoSchedule, ipAddress); 
+		
+		this.debug("5 we found range responsible for the ip " + ipRange);
+		
+		this.getCIAttributesBasedOnIPRange(ipRange, attributes);
+
+		this.debug("6. Final attributes for the CI..." + (new global.JSON().encode(attributes)));
+
+		//Update the CI with the attributes found...
+		this._updateCIWithAttributes(cmdb_ci, attributes);
+	},
+
+	_updateCIWithAttributes: function(cmdbCI, attributes) {
+			var gci = new global.GlideRecordUtil().getGR("cmdb_ci", cmdbCI);
+			if (gs.nil(gci)) {
+				this.debug("couldnt find CI " + cmdbCI.sys_id+'');
+				return; //for some reason the ci can't be found! GTFO
+			}
+
+			for (var name in attributes) {
+				this.debug("name is " + name + ". value is " + attributes[name]);			
+				gci[name] = attributes[name];
+			}
+
+			gci.update();
+		},
+	
+	getCIAttributesBasedOnSchedule: function(discoSchedule, attributes) {
+		var dsca = new GlideRecord("x_snc_sn_discovery_discovery_schedule_ci_attributes");
+		dsca.addQuery("discovery_schedule", discoSchedule.sys_id+'');
+		dsca.query();
+		while (dsca.next()) {
+			attributes[dsca.ci_attribute+''] = dsca.ci_attribute_value+'';		
+		}
+
+	},
+	
+
+	getCIAttributesBasedOnIPRange: function(ipRange, attributes) {
+		if (gs.nil(ipRange))
+			return;
+		
+		var gr = new GlideRecord("x_snc_sn_discovery_discovery_schedule_ci_attributes");
+		gr.addQuery("discovery_ip_range", ipRange);
+		gr.query();
+		while (gr.next()) {
+			attributes[gr.ci_attribute+''] = gr.ci_attribute_value+'';
+		}
+	},
+	
+	findRangeForIP: function(discoSchedule, ipAddress) {
+		// Update CI based on the attributes defined on the IP ranges 
+		var ipRanges = this._getAllDiscoIPRanges(discoSchedule);
+		if (ipRanges.length == 0)
+			return; //no range defined for some reason... unlikley, but check anyway
+
+		this.debug("4 we got some ranges! " + (new global.JSON().encode(ipRanges)));
+
+		var ipRange = this._getIPRangeForThisIPAddress(ipRanges, ipAddress);
+		if (gs.nil(ipRange)) {
+			return;  //no range is responsible for this IP... shoudln't be possible, but need to define this case
+		}		
+		
+		return ipRange;
+	},
+	
+		//Now we need to figure out which range set this particular CI falls under and then figure out what attributes need to be updated
+	_getIPRangeForThisIPAddress: function(ipRanges, ipAddress) {			
+		var ipAddressDecimal = x_snc_sn_discovery.IPAddressHelper.toDecimal(ipAddress);	
+		this.debug("ipAddressDecimal for the IP is " + ipAddressDecimal);
+		for (var i=0; i<ipRanges.length; i++) {
+			//Just need to find the first one that hits!
+			var ipRange = ipRanges[i];
+			var dsca = new GlideRecord("x_snc_sn_discovery_ip_range_calculation");
+			dsca.addQuery("discovery_ip_range", ipRange);
+			dsca.addQuery("list_of_ips", "CONTAINS", ipAddress);
+			dsca.query();
+			if (dsca.next())
+				return ipRange;
+
+			// we didn't find it within the list of ip range defined using distinct ip addresses, let's now look at ranges defined using cidr or range
+			dsca.initialize();
+			dsca.addQuery("discovery_ip_range", ipRange);
+			dsca.addQuery("starting_ip_decimal", "<=", ipAddressDecimal);
+			dsca.addQuery("ending_ip_decimal", ">=", ipAddressDecimal);
+			dsca.query();
+
+			if (dsca.next())
+				return ipRange;
+
+		}
+
+		return;
+	},
+
+
+	_getAllDiscoIPRanges: function(discoSchedule) {
+		var ipRanges = [];
+		this.debug("3.1 discoschedule is " + discoSchedule.sys_id+'');	
+		//We look for both IP ranges associated with it directly and also range set
+		//Look at directly attached IP Ranges
+		var dri = new GlideRecord("discovery_range_item");
+		dri.addQuery("schedule", discoSchedule.sys_id+'');
+		dri.query();
+		while (dri.next())
+			ipRanges.push(dri.sys_id+'');
+
+		//Look for range sets in the m2m, and get all the IP ranges witin each set
+		var drm2m = new GlideRecord("discovery_schedule_range");
+		drm2m.addQuery("dscheduler", discoSchedule.sys_id+'');
+		drm2m.query();
+		while (drm2m.next()) {
+			var dri2 = new GlideRecord("discovery_range_item");
+			dri2.addQuery("parent", drm2m.range.sys_id+'');
+			dri2.query();
+			while (dri2.next())
+				ipRanges.push(dri2.sys_id+'');
+		}
+
+		this.debug("3.2 got here! ipranges length is " + ipRanges.length);
+
+		return ipRanges;
+	},
+	
+	debug: function(msg) {
+		if (this.debugFlag)
+			gs.info(msg);
+		
+	},
+
+	
+    type: 'CIAttributePopulation'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2021-02-14 21:26:33</sys_created_on>
+        <sys_id>93f3e746db92e490fbadcef813961942</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>CIAttributePopulation</sys_name>
+        <sys_package display_value="SN Discovery Schedule Attributes" source="x_snc_sn_discovery">5e50158adb02ec108c256b1813961918</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</sys_scope>
+        <sys_update_name>sys_script_include_93f3e746db92e490fbadcef813961942</sys_update_name>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2021-02-16 21:13:38</sys_updated_on>
+    </sys_script_include>
+</record_update>
