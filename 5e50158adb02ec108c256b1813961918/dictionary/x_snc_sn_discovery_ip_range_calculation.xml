@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="IP Range Calculation" max_length="40" name="x_snc_sn_discovery_ip_range_calculation" sizeclass="4" type="collection">
+    <element label="IP Range Calculation" max_length="40" name="x_snc_sn_discovery_ip_range_calculation" sizeclass="7" type="collection">
         <element label="Discovery IP Range" max_length="32" name="discovery_ip_range" reference="discovery_range_item" reference_cascade_rule="cascade" type="reference"/>
         <element label="Ending IP" max_length="40" name="ending_ip" type="string"/>
         <element label="Ending IP decimal" max_length="20" name="ending_ip_decimal" type="decimal"/>

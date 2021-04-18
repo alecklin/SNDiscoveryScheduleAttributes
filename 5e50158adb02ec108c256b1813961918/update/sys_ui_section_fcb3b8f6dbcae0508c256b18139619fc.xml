@@ -4,97 +4,153 @@
             <element>.begin_split</element>
             <position>0</position>
             <sys_created_by>aleck.lin</sys_created_by>
-            <sys_created_on>2021-02-04 08:05:06</sys_created_on>
-            <sys_id>cacc093adb8ee0508c256b18139619c9</sys_id>
+            <sys_created_on>2021-04-18 06:17:04</sys_created_on>
+            <sys_id>6f103c52db2b60d0fbadcef8139619f9</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_sn_discovery_discovery_schedule_ci_attributes" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">fcb3b8f6dbcae0508c256b18139619fc</sys_ui_section>
             <sys_updated_by>aleck.lin</sys_updated_by>
-            <sys_updated_on>2021-02-04 08:05:06</sys_updated_on>
+            <sys_updated_on>2021-04-18 06:17:04</sys_updated_on>
             <sys_user/>
             <type>.begin_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>ci_attribute</element>
+            <element>type</element>
             <position>1</position>
             <sys_created_by>aleck.lin</sys_created_by>
-            <sys_created_on>2021-02-04 08:05:06</sys_created_on>
-            <sys_id>4ecc093adb8ee0508c256b18139619c9</sys_id>
+            <sys_created_on>2021-04-18 06:17:04</sys_created_on>
+            <sys_id>e7103c52db2b60d0fbadcef8139619fa</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_sn_discovery_discovery_schedule_ci_attributes" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">fcb3b8f6dbcae0508c256b18139619fc</sys_ui_section>
             <sys_updated_by>aleck.lin</sys_updated_by>
-            <sys_updated_on>2021-02-04 08:05:06</sys_updated_on>
+            <sys_updated_on>2021-04-18 06:17:04</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>ci_attribute_value</element>
+            <element>ci_table</element>
             <position>2</position>
             <sys_created_by>aleck.lin</sys_created_by>
-            <sys_created_on>2021-02-04 08:05:06</sys_created_on>
-            <sys_id>cecc093adb8ee0508c256b18139619c9</sys_id>
+            <sys_created_on>2021-04-18 06:17:04</sys_created_on>
+            <sys_id>6f103c52db2b60d0fbadcef8139619fa</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_sn_discovery_discovery_schedule_ci_attributes" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">fcb3b8f6dbcae0508c256b18139619fc</sys_ui_section>
             <sys_updated_by>aleck.lin</sys_updated_by>
-            <sys_updated_on>2021-02-04 08:05:06</sys_updated_on>
+            <sys_updated_on>2021-04-18 06:17:04</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>ci_attribute</element>
+            <position>3</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-04-18 06:17:04</sys_created_on>
+            <sys_id>e3103c52db2b60d0fbadcef8139619fb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_sn_discovery_discovery_schedule_ci_attributes" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">fcb3b8f6dbcae0508c256b18139619fc</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-04-18 06:17:04</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>attribute</element>
+            <position>4</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-04-18 06:17:04</sys_created_on>
+            <sys_id>6b103c52db2b60d0fbadcef8139619fb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_sn_discovery_discovery_schedule_ci_attributes" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">fcb3b8f6dbcae0508c256b18139619fc</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-04-18 06:17:04</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
-            <position>3</position>
+            <position>5</position>
             <sys_created_by>aleck.lin</sys_created_by>
-            <sys_created_on>2021-02-04 08:05:06</sys_created_on>
-            <sys_id>42cc093adb8ee0508c256b18139619ca</sys_id>
+            <sys_created_on>2021-04-18 06:17:04</sys_created_on>
+            <sys_id>ef103c52db2b60d0fbadcef8139619fb</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_sn_discovery_discovery_schedule_ci_attributes" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">fcb3b8f6dbcae0508c256b18139619fc</sys_ui_section>
             <sys_updated_by>aleck.lin</sys_updated_by>
-            <sys_updated_on>2021-02-04 08:05:06</sys_updated_on>
+            <sys_updated_on>2021-04-18 06:17:04</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>discovery_ip_range</element>
-            <position>4</position>
+            <element>value_type</element>
+            <position>6</position>
             <sys_created_by>aleck.lin</sys_created_by>
-            <sys_created_on>2021-02-04 08:05:06</sys_created_on>
-            <sys_id>c2cc093adb8ee0508c256b18139619ca</sys_id>
+            <sys_created_on>2021-04-18 06:17:04</sys_created_on>
+            <sys_id>67103c52db2b60d0fbadcef8139619fc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_sn_discovery_discovery_schedule_ci_attributes" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">fcb3b8f6dbcae0508c256b18139619fc</sys_ui_section>
             <sys_updated_by>aleck.lin</sys_updated_by>
-            <sys_updated_on>2021-02-04 08:05:06</sys_updated_on>
+            <sys_updated_on>2021-04-18 06:17:04</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>discovery_schedule</element>
-            <position>5</position>
+            <element>ci_attribute_value</element>
+            <position>7</position>
             <sys_created_by>aleck.lin</sys_created_by>
-            <sys_created_on>2021-02-04 08:05:06</sys_created_on>
-            <sys_id>46cc093adb8ee0508c256b18139619ca</sys_id>
+            <sys_created_on>2021-04-18 06:17:04</sys_created_on>
+            <sys_id>eb103c52db2b60d0fbadcef8139619fc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_sn_discovery_discovery_schedule_ci_attributes" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">fcb3b8f6dbcae0508c256b18139619fc</sys_ui_section>
             <sys_updated_by>aleck.lin</sys_updated_by>
-            <sys_updated_on>2021-02-04 08:05:06</sys_updated_on>
+            <sys_updated_on>2021-04-18 06:17:04</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>reference_table</element>
+            <position>8</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-04-18 06:17:04</sys_created_on>
+            <sys_id>63103c52db2b60d0fbadcef8139619fd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_sn_discovery_discovery_schedule_ci_attributes" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">fcb3b8f6dbcae0508c256b18139619fc</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-04-18 06:17:04</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>reference_value</element>
+            <position>9</position>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-04-18 06:17:04</sys_created_on>
+            <sys_id>e7103c52db2b60d0fbadcef8139619fd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_sn_discovery_discovery_schedule_ci_attributes" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">fcb3b8f6dbcae0508c256b18139619fc</sys_ui_section>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-04-18 06:17:04</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.end_split</element>
-            <position>6</position>
+            <position>10</position>
             <sys_created_by>aleck.lin</sys_created_by>
-            <sys_created_on>2021-02-04 08:05:06</sys_created_on>
-            <sys_id>c6cc093adb8ee0508c256b18139619ca</sys_id>
+            <sys_created_on>2021-04-18 06:17:04</sys_created_on>
+            <sys_id>6f103c52db2b60d0fbadcef8139619fd</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_sn_discovery_discovery_schedule_ci_attributes" sys_domain="global" view="eab27c76dbcae0508c256b1813961969">fcb3b8f6dbcae0508c256b18139619fc</sys_ui_section>
             <sys_updated_by>aleck.lin</sys_updated_by>
-            <sys_updated_on>2021-02-04 08:05:06</sys_updated_on>
+            <sys_updated_on>2021-04-18 06:17:04</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>

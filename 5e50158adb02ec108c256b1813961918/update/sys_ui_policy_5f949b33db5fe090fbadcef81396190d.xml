@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_policy">
     <sys_ui_policy action="INSERT_OR_UPDATE">
         <active>true</active>
-        <conditions/>
+        <conditions table="x_snc_sn_discovery_discovery_schedule_ci_attributes">value_type=string^EQ<item display_value="String" endquery="false" field="value_type" goto="false" newquery="false" operator="=" or="false" value="string"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </conditions>
         <description/>
         <global>true</global>
         <inherit>false</inherit>
@@ -19,22 +21,22 @@
 
 }]]></script_true>
         <set_values/>
-        <short_description>Mandatory Attribute or CI Attribute (to be implemented)</short_description>
+        <short_description>When value type is string</short_description>
         <sys_class_name>sys_ui_policy</sys_class_name>
         <sys_created_by>aleck.lin</sys_created_by>
-        <sys_created_on>2021-02-04 08:08:18</sys_created_on>
+        <sys_created_on>2021-04-10 23:50:58</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>866dc9badb8ee0508c256b18139619e9</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>Mandatory Attribute or CI Attribute (to be implemented)</sys_name>
+        <sys_id>5f949b33db5fe090fbadcef81396190d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>When value type is string</sys_name>
         <sys_overrides/>
         <sys_package display_value="SN Discovery Schedule Attributes" source="x_snc_sn_discovery">5e50158adb02ec108c256b1813961918</sys_package>
         <sys_policy/>
         <sys_scope display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</sys_scope>
-        <sys_update_name>sys_ui_policy_866dc9badb8ee0508c256b18139619e9</sys_update_name>
+        <sys_update_name>sys_ui_policy_5f949b33db5fe090fbadcef81396190d</sys_update_name>
         <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2021-04-10 23:45:47</sys_updated_on>
+        <sys_updated_on>2021-04-10 23:50:58</sys_updated_on>
         <table>x_snc_sn_discovery_discovery_schedule_ci_attributes</table>
         <ui_type>0</ui_type>
         <view/>

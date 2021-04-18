@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="type" table="x_snc_sn_discovery_discovery_schedule_ci_attributes" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>type</element>
+            <name>x_snc_sn_discovery_discovery_schedule_ci_attributes</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-04-10 16:25:10</sys_created_on>
+            <sys_id>559e61f7dbd3e090fbadcef81396192e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>type</sys_name>
+            <sys_package display_value="SN Discovery Schedule Attributes" source="x_snc_sn_discovery">5e50158adb02ec108c256b1813961918</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</sys_scope>
+            <sys_update_name>sys_choice_x_snc_sn_discovery_discovery_schedule_ci_attributes_type</sys_update_name>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-04-10 16:25:10</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Field</label>
+            <language>en</language>
+            <name>x_snc_sn_discovery_discovery_schedule_ci_attributes</name>
+            <sequence/>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-04-10 16:25:10</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f98ea5f7dbd3e090fbadcef813961950</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-04-10 22:48:45</sys_updated_on>
+            <value>field</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Tag</label>
+            <language>en</language>
+            <name>x_snc_sn_discovery_discovery_schedule_ci_attributes</name>
+            <sequence/>
+            <sys_created_by>aleck.lin</sys_created_by>
+            <sys_created_on>2021-04-10 16:32:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>0bef697bdbd3e090fbadcef81396196e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>aleck.lin</sys_updated_by>
+            <sys_updated_on>2021-04-10 16:32:12</sys_updated_on>
+            <value>tag</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

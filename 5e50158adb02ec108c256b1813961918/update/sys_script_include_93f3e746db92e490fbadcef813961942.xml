@@ -51,28 +51,106 @@ CIAttributePopulation.prototype = {
 	},
 
 	_updateCIWithAttributes: function(cmdbCI, attributes) {
-			var gci = new global.GlideRecordUtil().getGR("cmdb_ci", cmdbCI);
-			if (gs.nil(gci)) {
-				this.debug("couldnt find CI " + cmdbCI.sys_id+'');
-				return; //for some reason the ci can't be found! GTFO
-			}
-
-			for (var name in attributes) {
-				this.debug("name is " + name + ". value is " + attributes[name]);			
-				gci[name] = attributes[name];
-			}
-
-			gci.update();
+			this._updateCIFields(cmdbCI, attributes["field"]);
+			this._updateCITags(cmdbCI, attributes["tag"]);
+		
 		},
 	
+	_updateCIFields: function(cmdbCI, fieldAttributes) {
+		if (Object.keys(fieldAttributes).length == 0) {
+			this.debug("There are no field attributes! ");
+			return;
+		}
+		
+		var gci = new global.GlideRecordUtil().getGR("cmdb_ci", cmdbCI);
+		if (gs.nil(gci)) {
+			this.debug("couldnt find CI " + cmdbCI.sys_id+'');
+			return; //for some reason the ci can't be found! GTFO
+		}
+
+		for (var name in fieldAttributes) {
+			this.debug("Field name is " + name + ". value is " + fieldAttributes[name]);			
+			gci[name] = fieldAttributes[name];
+		}
+
+		gci.update();		
+	}, 
+	
+	_updateCITags: function(cmdbCI, tagAttributes) {
+		if (Object.keys(tagAttributes).length == 0) {
+			this.debug("There are no tag attributes! ");
+			return;
+		}
+			
+		var gr = new GlideRecord("cmdb_key_value");
+		gr.addQuery("configuration_item", cmdbCI);
+		gr.query();
+		while (gr.next()) {
+			var key = gr.key+'';
+			if (!tagAttributes.hasOwnProperty(key))
+				continue;
+			
+			// If the values don't match, update them
+			if (gr.value+'' != tagAttributes[key]) {			
+				this.debug("Updating tag name " + key + " with value from " + gr.value+'' + " to " + tagAttributes[key]);
+				gr.value = tagAttributes[key];
+				gr.update();
+			}
+			
+			//removing the property from the tagAttributes object
+			if (!delete tagAttributes[key]) {
+				this.debug("For some reason, the property " + key + " was not able to be deleted from the tagAttributes object!");
+			}
+		}
+		
+		// For whatever key is left... go ahead and insert
+		for (var name in tagAttributes) {
+			this.debug("Adding tag! Tag name is " + name + ". value is " + tagAttributes[name]);	
+
+			gr = new GlideRecord("cmdb_key_value");
+			gr.configuration_item = cmdbCI;
+			gr.key = name;
+			gr.value = tagAttributes[name];
+			gr.insert();
+		}
+		
+	}, 
+	
 	getCIAttributesBasedOnSchedule: function(discoSchedule, attributes) {
+		var ciAttrs = {};
+		var tagAttrs = {};
+		
 		var dsca = new GlideRecord("x_snc_sn_discovery_discovery_schedule_ci_attributes");
 		dsca.addQuery("discovery_schedule", discoSchedule.sys_id+'');
 		dsca.query();
 		while (dsca.next()) {
-			attributes[dsca.ci_attribute+''] = dsca.ci_attribute_value+'';		
+			//Get the attribute type first and then evaluate the value
+			var attrType = dsca.type+'';
+						
+			if (attrType == "field") {
+				ciAttrs[dsca.ci_attribute+''] = getValue(dsca, this);		
+			} else if (attrType == "tag") {				
+				tagAttrs[dsca.attribute+''] = getValue(dsca, this);
+			} else {
+				this.debug("Unkown attribute type = " + attrType);
+			}						
 		}
-
+		
+		attributes["field"] = ciAttrs;
+		attributes["tag"] = tagAttrs;
+		
+		function getValue(dsca, that) {
+			var valueType = dsca.value_type+'';
+			
+			if (valueType == "string") {
+				return dsca.ci_attribute_value+'';
+				
+			} else if (valueType == "reference") {
+				return dsca.reference_value+'';
+			} else {
+				that.debug("Unknown value type = " + valueType);
+			}
+		}
 	},
 	
 
@@ -162,6 +240,10 @@ CIAttributePopulation.prototype = {
 		return ipRanges;
 	},
 	
+	setDebug: function(flag) {
+		this.debugFlag = flag;
+	},
+	
 	debug: function(msg) {
 		if (this.debugFlag)
 			gs.info(msg);
@@ -175,13 +257,13 @@ CIAttributePopulation.prototype = {
         <sys_created_by>aleck.lin</sys_created_by>
         <sys_created_on>2021-02-14 21:26:33</sys_created_on>
         <sys_id>93f3e746db92e490fbadcef813961942</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_name>CIAttributePopulation</sys_name>
         <sys_package display_value="SN Discovery Schedule Attributes" source="x_snc_sn_discovery">5e50158adb02ec108c256b1813961918</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</sys_scope>
         <sys_update_name>sys_script_include_93f3e746db92e490fbadcef813961942</sys_update_name>
         <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2021-02-16 21:13:38</sys_updated_on>
+        <sys_updated_on>2021-04-18 18:16:03</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -20,8 +20,8 @@
         <default_value/>
         <defaultsort/>
         <delete_roles/>
-        <dependent/>
-        <dependent_on_field/>
+        <dependent>ci_table</dependent>
+        <dependent_on_field>ci_table</dependent_on_field>
         <display>false</display>
         <dynamic_creation>false</dynamic_creation>
         <dynamic_creation_script/>
@@ -32,7 +32,7 @@
         <foreign_database/>
         <function_definition/>
         <function_field>false</function_field>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="">field_name</internal_type>
         <mandatory>false</mandatory>
         <max_length>40</max_length>
         <name>x_snc_sn_discovery_discovery_schedule_ci_attributes</name>
@@ -54,18 +54,18 @@
         <sys_created_by>aleck.lin</sys_created_by>
         <sys_created_on>2021-02-04 05:54:46</sys_created_on>
         <sys_id>50382836db8ae0508c256b181396194b</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>CI Attribute</sys_name>
         <sys_package display_value="SN Discovery Schedule Attributes" source="x_snc_sn_discovery">5e50158adb02ec108c256b1813961918</sys_package>
         <sys_policy/>
         <sys_scope display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</sys_scope>
         <sys_update_name>sys_dictionary_x_snc_sn_discovery_discovery_schedule_ci_attributes_ci_attribute</sys_update_name>
         <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2021-02-04 05:54:46</sys_updated_on>
+        <sys_updated_on>2021-04-18 17:54:12</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
+        <use_dependent_field>true</use_dependent_field>
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
         <virtual>false</virtual>

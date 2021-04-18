@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>reference_value</field>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2021-04-10 23:51:22</sys_created_on>
+        <sys_id>5db41f33db5fe090fbadcef8139619db</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>reference_value</sys_name>
+        <sys_package display_value="SN Discovery Schedule Attributes" source="x_snc_sn_discovery">5e50158adb02ec108c256b1813961918</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</sys_scope>
+        <sys_update_name>sys_ui_policy_action_5db41f33db5fe090fbadcef8139619db</sys_update_name>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2021-04-10 23:51:22</sys_updated_on>
+        <table>x_snc_sn_discovery_discovery_schedule_ci_attributes</table>
+        <ui_policy display_value="When value type is string">5f949b33db5fe090fbadcef81396190d</ui_policy>
+        <visible>false</visible>
+    </sys_ui_policy_action>
+</record_update>

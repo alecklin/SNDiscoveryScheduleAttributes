@@ -1,13 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Discovery Schedule CI Attributes" max_length="40" name="x_snc_sn_discovery_discovery_schedule_ci_attributes" sizeclass="9" type="collection">
-        <element label="CI Attribute" max_length="40" name="ci_attribute" type="string"/>
-        <element label="CI Attribute Value" max_length="256" name="ci_attribute_value" type="string"/>
+    <element label="Discovery Schedule CI Attributes" max_length="40" name="x_snc_sn_discovery_discovery_schedule_ci_attributes" sizeclass="17" type="collection">
+        <element label="Attribute" max_length="40" name="attribute" type="string"/>
+        <element dependent="ci_table" dependent_on_field="ci_table" label="CI Attribute" max_length="40" name="ci_attribute" type="field_name" use_dependent_field="true"/>
+        <element label="Value" max_length="256" name="ci_attribute_value" type="string"/>
+        <element attributes="allow_public=true,base_table=cmdb_ci" choice="1" default="cmdb_ci" label="CI Table" max_length="80" name="ci_table" type="table_name">
+            <choice/>
+        </element>
         <element label="Discovery IP Range" max_length="32" name="discovery_ip_range" reference="discovery_range_item" reference_cascade_rule="cascade" type="reference"/>
         <element label="Discovery Schedule" max_length="32" name="discovery_schedule" reference="discovery_schedule" reference_cascade_rule="cascade" type="reference"/>
+        <element label="Reference Table" max_length="80" name="reference_table" type="table_name"/>
+        <element dependent="reference_table" dependent_on_field="reference_table" label="Reference Value" max_length="32" name="reference_value" type="document_id" use_dependent_field="true"/>
+        <element choice="3" default="field" label="Attribute Type" max_length="40" name="type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Field" value="field"/>
+                <element inactive_on_update="false" label="Tag" value="tag"/>
+            </choice>
+        </element>
+        <element choice="3" default="string" label="Value Type" max_length="40" name="value_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Reference" value="reference"/>
+                <element inactive_on_update="false" label="String" value="string"/>
+            </choice>
+        </element>
         <index name="index">
-            <element name="discovery_ip_range"/>
+            <element name="reference_value"/>
         </index>
         <index name="index2">
+            <element name="discovery_ip_range"/>
+        </index>
+        <index name="index3">
             <element name="discovery_schedule"/>
         </index>
     </element>

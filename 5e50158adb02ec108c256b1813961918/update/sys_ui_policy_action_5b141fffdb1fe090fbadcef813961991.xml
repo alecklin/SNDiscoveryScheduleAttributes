@@ -2,22 +2,22 @@
     <sys_ui_policy_action action="INSERT_OR_UPDATE">
         <cleared>false</cleared>
         <disabled>ignore</disabled>
-        <field>ci_attribute</field>
-        <mandatory>true</mandatory>
+        <field>ci_attribute_value</field>
+        <mandatory>ignore</mandatory>
         <sys_class_name>sys_ui_policy_action</sys_class_name>
         <sys_created_by>aleck.lin</sys_created_by>
-        <sys_created_on>2021-02-04 08:08:34</sys_created_on>
-        <sys_id>d68d01fadb8ee0508c256b1813961906</sys_id>
+        <sys_created_on>2021-04-10 23:49:08</sys_created_on>
+        <sys_id>5b141fffdb1fe090fbadcef813961991</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>ci_attribute</sys_name>
+        <sys_name>ci_attribute_value</sys_name>
         <sys_package display_value="SN Discovery Schedule Attributes" source="x_snc_sn_discovery">5e50158adb02ec108c256b1813961918</sys_package>
         <sys_policy/>
         <sys_scope display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</sys_scope>
-        <sys_update_name>sys_ui_policy_action_d68d01fadb8ee0508c256b1813961906</sys_update_name>
+        <sys_update_name>sys_ui_policy_action_5b141fffdb1fe090fbadcef813961991</sys_update_name>
         <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2021-02-04 08:08:34</sys_updated_on>
+        <sys_updated_on>2021-04-10 23:49:08</sys_updated_on>
         <table>x_snc_sn_discovery_discovery_schedule_ci_attributes</table>
-        <ui_policy display_value="Mandatory Attribue Name and Value ">866dc9badb8ee0508c256b18139619e9</ui_policy>
-        <visible>ignore</visible>
+        <ui_policy display_value="When value type is reference">3d149bffdb1fe090fbadcef813961920</ui_policy>
+        <visible>false</visible>
     </sys_ui_policy_action>
 </record_update>
