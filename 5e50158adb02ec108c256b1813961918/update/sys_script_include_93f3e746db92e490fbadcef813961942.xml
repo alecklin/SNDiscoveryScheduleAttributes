@@ -32,7 +32,9 @@ CIAttributePopulation.prototype = {
 			return; //if we can't find no schedule... unlikely, but check anyway
 
 		var attributes = {};
-
+		attributes["field"] = {};
+		attributes["tag"] = {};		
+		
 		// Update CI based on attributes defined on the schedule directly
 		this.getCIAttributesBasedOnSchedule(discoSchedule, attributes);
 		
@@ -116,28 +118,46 @@ CIAttributePopulation.prototype = {
 		
 	}, 
 	
-	getCIAttributesBasedOnSchedule: function(discoSchedule, attributes) {
-		var ciAttrs = {};
-		var tagAttrs = {};
+	getCIAttributesBasedOnSchedule: function(discoSchedule, attributes) {		
+		this.debug("Getting attributes from schedule...");
 		
 		var dsca = new GlideRecord("x_snc_sn_discovery_discovery_schedule_ci_attributes");
 		dsca.addQuery("discovery_schedule", discoSchedule.sys_id+'');
 		dsca.query();
 		while (dsca.next()) {
-			//Get the attribute type first and then evaluate the value
-			var attrType = dsca.type+'';
-						
-			if (attrType == "field") {
-				ciAttrs[dsca.ci_attribute+''] = getValue(dsca, this);		
-			} else if (attrType == "tag") {				
-				tagAttrs[dsca.attribute+''] = getValue(dsca, this);
-			} else {
-				this.debug("Unkown attribute type = " + attrType);
-			}						
+			this._getAttributes(dsca, attributes);			
 		}
+	},
+	
+
+	getCIAttributesBasedOnIPRange: function(ipRange, attributes) {
+		this.debug("Getting attributes from IP range...");
 		
-		attributes["field"] = ciAttrs;
-		attributes["tag"] = tagAttrs;
+		if (gs.nil(ipRange))
+			return;
+		
+		var dsca = new GlideRecord("x_snc_sn_discovery_discovery_schedule_ci_attributes");
+		dsca.addQuery("discovery_ip_range", ipRange);
+		dsca.query();
+		while (dsca.next()) {
+			this._getAttributes(dsca, attributes);
+		}
+	},
+	
+	_getAttributes: function(dsca, attributes) {		
+		var ciAttrs = attributes["field"];
+		var tagAttrs = attributes["tag"];
+		
+		//Get the attribute type first and then evaluate the value
+		var attrType = dsca.type+'';
+
+		if (attrType == "field") {
+			ciAttrs[dsca.ci_attribute+''] = getValue(dsca, this);		
+		} else if (attrType == "tag") {				
+			tagAttrs[dsca.attribute+''] = getValue(dsca, this);
+		} else {
+			this.debug("Unkown attribute type = " + attrType);
+		}		
 		
 		function getValue(dsca, that) {
 			var valueType = dsca.value_type+'';
@@ -150,21 +170,9 @@ CIAttributePopulation.prototype = {
 			} else {
 				that.debug("Unknown value type = " + valueType);
 			}
-		}
+		}		
 	},
 	
-
-	getCIAttributesBasedOnIPRange: function(ipRange, attributes) {
-		if (gs.nil(ipRange))
-			return;
-		
-		var gr = new GlideRecord("x_snc_sn_discovery_discovery_schedule_ci_attributes");
-		gr.addQuery("discovery_ip_range", ipRange);
-		gr.query();
-		while (gr.next()) {
-			attributes[gr.ci_attribute+''] = gr.ci_attribute_value+'';
-		}
-	},
 	
 	findRangeForIP: function(discoSchedule, ipAddress) {
 		// Update CI based on the attributes defined on the IP ranges 
@@ -257,13 +265,13 @@ CIAttributePopulation.prototype = {
         <sys_created_by>aleck.lin</sys_created_by>
         <sys_created_on>2021-02-14 21:26:33</sys_created_on>
         <sys_id>93f3e746db92e490fbadcef813961942</sys_id>
-        <sys_mod_count>26</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_name>CIAttributePopulation</sys_name>
         <sys_package display_value="SN Discovery Schedule Attributes" source="x_snc_sn_discovery">5e50158adb02ec108c256b1813961918</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</sys_scope>
         <sys_update_name>sys_script_include_93f3e746db92e490fbadcef813961942</sys_update_name>
         <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2021-04-18 18:16:03</sys_updated_on>
+        <sys_updated_on>2021-04-19 05:17:47</sys_updated_on>
     </sys_script_include>
 </record_update>
