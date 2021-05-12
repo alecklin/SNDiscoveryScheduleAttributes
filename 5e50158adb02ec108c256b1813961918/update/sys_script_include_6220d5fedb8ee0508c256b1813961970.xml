@@ -28,12 +28,34 @@ IPAddressHelper.toDecimal = function(ipAddr) {
 	return ipDec;
 	
 	function validateIP(ipAddr) {
-		// Got this from https://www.w3resource.com/javascript/form/ip-address-validation.php
-		if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(ipAddr)) {
-			return true;
-		}
+		// my lame IP validator
+		var ip = ipAddr;
+
+		var grps = ip.split(".");
+		if (grps.length != 4)
+			return false;
+
+		//Each number should be between 0 and 255
+		for (var i=0; i<grps.length; i++) {
+			if ((grps[i]).length > 3) {
+				return false;
+			}
+
+			var num = parseInt(grps[i]);
+			if (isNaN(num)) {
+				return false;
+			}
+			
+			if (num < 0) {
+				return false;
+			}
+			
+			if (num > 255) {
+				return false;
+			}
+		}		
 		
-		return false;
+		return true;
 	}
 	
 },
@@ -53,26 +75,41 @@ IPAddressHelper.CIDRToIPs = function(network, subnet) {
 	*/
 	return getIpRangeFromAddressAndNetmask(network+"/"+subnet);
 	
-	/* https://stackoverflow.com/questions/32978982/calculate-ip-range-from-ip-string-equal-to-x-x-x-x-x */
 	function getIpRangeFromAddressAndNetmask(str) {
-	  var part = str.split("/"); // part[0] = base address, part[1] = netmask
-	  var ipaddress = part[0].split('.');
-	  var netmaskblocks = ["0","0","0","0"];
-	  if(!/\d+\.\d+\.\d+\.\d+/.test(part[1])) {
-		// part[1] has to be between 0 and 32
-		netmaskblocks = ("1".repeat(parseInt(part[1], 10)) + "0".repeat(32-parseInt(part[1], 10))).match(/.{1,8}/g);
-		netmaskblocks = netmaskblocks.map(function(el) { return parseInt(el, 2); });
-	  } else {
-		// xxx.xxx.xxx.xxx
-		netmaskblocks = part[1].split('.').map(function(el) { return parseInt(el, 10) });
-	  }
-	  // invert for creating broadcast address (highest address)
-	  var invertedNetmaskblocks = netmaskblocks.map(function(el) { return el ^ 255; });
-	  var baseAddress = ipaddress.map(function(block, idx) { return block & netmaskblocks[idx]; });
-	  var broadcastaddress = baseAddress.map(function(block, idx) { return block | invertedNetmaskblocks[idx]; });
-	  return [baseAddress.join('.'), broadcastaddress.join('.')];
+		var arr = str.split("/"); // split into ip address and netmask parts
+		var ipaddr = arr[0].split('.');
+		var netmask = ["0","0","0","0"];
+		if(!/\d+\.\d+\.\d+\.\d+/.test(arr[1])) {
+			// arr[1] should be between 0 and 32
+			//fill the array with x number of positions with 1, rest with 0
+			var mask= "";
+			for(var index=0;index<32;index++)
+				mask+= (index<arr[1])? '1':'0';
+			
+			//chunk it in 8 pieces
+			netmask = [];
+			while (mask.length) {
+				netmask.push(mask.substr(0, 8));
+				mask = mask.substr(8);
+			}
+			
+			//convert to binary
+			for(var i=0;i<4;i++)
+				netmask[i] = parseInt(netmask[i], 2);
+			
+		} else {	
+			netmask = arr[1].split('.').map(function(item) { return parseInt(item, 10); });
+		}
+		// invert for broadcast address (high address)
+		// invert netmask to get ksamten
+		var ksamten = netmask.map(function(item) { return item ^ 255; });
+		var baseAddr = ipaddr.map(function(chunk, n) { return chunk & netmask[n]; });
+		var broadcastAddr = baseAddr.map(function(chunk, n) { return chunk | ksamten[n]; });
+
+		return [baseAddr.join('.'), broadcastAddr.join('.')];
 	}
 },
+	
 
 IPAddressHelper.prototype = {
 
@@ -85,13 +122,13 @@ IPAddressHelper.prototype = {
         <sys_created_by>aleck.lin</sys_created_by>
         <sys_created_on>2021-02-04 08:22:12</sys_created_on>
         <sys_id>6220d5fedb8ee0508c256b1813961970</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_name>IPAddressHelper</sys_name>
         <sys_package display_value="SN Discovery Schedule Attributes" source="x_snc_sn_discovery">5e50158adb02ec108c256b1813961918</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="SN Discovery Schedule Attributes">5e50158adb02ec108c256b1813961918</sys_scope>
         <sys_update_name>sys_script_include_6220d5fedb8ee0508c256b1813961970</sys_update_name>
         <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2021-02-11 08:50:05</sys_updated_on>
+        <sys_updated_on>2021-05-12 06:42:57</sys_updated_on>
     </sys_script_include>
 </record_update>
